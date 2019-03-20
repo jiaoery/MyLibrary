@@ -10,4 +10,13 @@ package com.example.myretrofit;
  * @since JDK 1.8
  */
 public class Tools {
+
+    private static Tools instance;
+
+    public static Tools getInstance(){
+        if(instance==null){
+            instance=new Tools();
+        }
+        return instance;
+    }
 }
