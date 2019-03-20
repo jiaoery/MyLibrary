@@ -19,4 +19,8 @@ public class Tools {
         }
         return instance;
     }
+
+    private Tools(){
+
+    }
 }
