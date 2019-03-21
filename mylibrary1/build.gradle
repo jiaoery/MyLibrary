@@ -18,7 +18,7 @@ publish {
     userOrg = 'jixiang'//bintray.com 个人用户为用户名，企业用户为orgnation名
     groupId = 'com.example.mylibrary1'//jcenter上的路径 appid
     artifactId = 'mylibrary1'//项目名称 与bintray上配置一致
-    publishVersion = '1.0.1'//版本号
+    publishVersion = '1.0.2'//版本号
     desc = 'this is for test'//描述，不重要
     website = 'https://github.com/jixiang52002/MyRetrofit'//网站，最好有，不重要
 }
@@ -35,6 +35,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+    }
+
+    //不使用lint功能
+    lintOptions {
+        abortOnError false
     }
 
     buildTypes {

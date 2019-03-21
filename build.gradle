@@ -4,7 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-//        maven{url 'https://jx52002.bintray.com/maven' }
+        maven{url 'https://jx52002.bintray.com/maven' }
         
     }
     dependencies {
@@ -22,7 +22,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-//        maven{url 'https://jx52002.bintray.com/maven' }
+        maven{url 'https://jx52002.bintray.com/maven' }
         
     }
 }
@@ -32,9 +32,12 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+//处理javadoc注释中存在中文编译不通过的问题
 tasks.withType(Javadoc) {
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('encoding', 'UTF-8')
 }
+//处理javadoc编译错误的问题
+tasks.getByPath(":mylibrary1:releaseAndroidJavadocs").enabled = false
 
 //tasks.getByPath(":要上传的库Model名称:releaseAndroidJavadocs").enabled = false
