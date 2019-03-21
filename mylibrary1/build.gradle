@@ -1,4 +1,27 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+apply plugin: 'maven'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'jixiang'//bintray.com 个人用户为用户名，企业用户为orgnation名
+    groupId = 'com.example.mylibrary1'//jcenter上的路径 appid
+    artifactId = 'mylibrary1'//项目名称 与bintray上配置一致
+    publishVersion = '1.0.1'//版本号
+    desc = 'this is for test'//描述，不重要
+    website = 'https://github.com/jixiang52002/MyRetrofit'//网站，最好有，不重要
+}
 
 android {
     compileSdkVersion 28
@@ -32,5 +55,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply from: 'bintray.gradle'
+
+
 
