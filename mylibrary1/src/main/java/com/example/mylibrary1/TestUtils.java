@@ -1,5 +1,7 @@
 package com.example.mylibrary1;
 
+import android.os.Parcelable;
+
 /**
  * ClassName: TestUtils<br/>
  * Description: TODO Description. <br/>
@@ -9,7 +11,7 @@ package com.example.mylibrary1;
  * @version V1.0.0
  * @since JDK 1.8
  */
-public class TestUtils {
+public class TestUtils  {
     private static  TestUtils instance;
 
     /**
@@ -23,4 +25,5 @@ public class TestUtils {
     }
 
     private TestUtils(){}
+
 }
