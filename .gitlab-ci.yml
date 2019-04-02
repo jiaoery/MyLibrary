@@ -1,0 +1,23 @@
+image: thyrlian/android-sdk
+
+before_script:
+- echo $PATH
+- export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+- export GRADLE_HOME=/opt/gradle
+- export ANDROID_HOME=/opt/android-sdk-custom
+- export PATH=${PATH}:${GRADLE_HOME}/bin:${KOTLIN_HOME}/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools/bin
+- export GITLAB_USER_NAME=GHOST
+
+
+stages:
+- build
+
+assembleDebug:
+  stage: build
+  script:
+  - gradle :menj:assembleRelease --no-daemon --stacktrace
+  artifacts:
+    paths:
+    - menj/build/outputs/apk
+  tags:
+  - android-app-ci
